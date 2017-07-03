@@ -87,11 +87,11 @@
 	//	console.log('\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n');
 
 	function hasClass(tag, cssClass) {
-		var regex = new RegExp('<' + tag + '\\sclass=([\'\"\]+)(?:\\w+)?\\s?(' + cssClass + ')' + '([\\s\'\\"\])', 'gim');
+		var regex = new RegExp('<' + tag + '\\sclass=(?:[\'\"\]+?)(?:\\w+)?\\s?(' + cssClass + ')' + '(?:[\\s\'\\"\])', 'gim');
 		console.log(regex);
 		console.log('Esse é o markup', markup.match(regex));
 		return markup.match(regex) ? true : false;
 	}
 
-	console.log(hasClass('span', 'date'));
+	console.log(hasClass('main', 'container'));
 })();
