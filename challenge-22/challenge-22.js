@@ -46,7 +46,7 @@
 
   function sum() {
     return Array.prototype.reduce.call(arguments, function (acc, currentValue) {
-      return Number(acc) + Number(currentValue);
+      return +acc + +currentValue;
     });
   }
 
@@ -55,9 +55,9 @@
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log('\nSomar alguns números:');
-  console.log('A soma é: ', sum.call(null, 1, 2, 3, 4, 5, 6, 7, 8, 9));
-  console.log('A soma é: ', sum.call(null, 1, 2, 3, 4));
-  console.log('A soma é: ', sum.call(null, 1, 2, 3, 4, 5, 8, 9));
+  console.log('A soma é: ', sum(1, 2, 3, 4, 5, 6, 7, 8, 9));
+  console.log('A soma é: ', sum(1, 2, 3, 4));
+  console.log('A soma é: ', sum(1, 2, 3, 4, 5, 8, 9));
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -80,8 +80,7 @@
   console.log('\nFunção que limpa entrada do usuário (somente números):');
 
   function justNumbers(stringNumeros) {
-    var regex = /(\d+)/gim
-    return stringNumeros.match(regex);
+    return stringNumeros.match(/(\d+)/gim);
   }
 
   console.log();
